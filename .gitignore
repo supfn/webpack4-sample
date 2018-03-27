@@ -1,0 +1,13 @@
+.idea
+*.iml
+web.config
+node_modules
+.out
+.temp
+.tmp
+.tinypng
+Thumbs.db
+dist
+dest
+build
+
