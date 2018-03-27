@@ -2,7 +2,6 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
-console.log("process.env.NODE_ENV:",process.env.NODE_ENV);
 
 module.exports = {
     entry: __dirname + "/app/main.js",//已多次提及的唯一入口文件
@@ -11,12 +10,6 @@ module.exports = {
         filename: "bundle-[hash].js"//打包后输出文件的文件名
     },
     devtool: 'null',
-    devServer: {
-        contentBase: "./public",//本地服务器所加载的页面所在的目录
-        historyApiFallback: true,//不跳转
-        inline: true,//实时刷新
-        hot: true,
-    },
 
     module: {
         rules: [
@@ -66,7 +59,6 @@ module.exports = {
             filename: "./index.html",
             title: "Webpack4 Sample"
         }),
-        new webpack.HotModuleReplacementPlugin(),//热加载插件
         new MiniCssExtractPlugin({
             filename: "[name].css",
             chunkFilename: "[id].css"
