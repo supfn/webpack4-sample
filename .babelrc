@@ -1,5 +1,5 @@
 {
-  "presets": ["react", "env"],
+  "presets": ["react", "env", "stage-0"],
   "env": {
     "development": {
       "plugins": [["react-transform", {
@@ -11,9 +11,8 @@
       }]]
     }
   },
-  "comments": false,
   "plugins": [
     "transform-runtime",
-    "syntax-dynamic-import",
+    "syntax-dynamic-import"
   ]
 }
