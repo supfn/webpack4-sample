@@ -1,22 +1,12 @@
-const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 module.exports = {
-    entry: __dirname + "/app/main.js",//已多次提及的唯一入口文件
+    entry: __dirname + "/src/main.js",//已多次提及的唯一入口文件
     output: {
         path: __dirname + "/dist",//打包后的文件存放的地方
-        filename: "bundle-[hash].js"//打包后输出文件的文件名
+        filename: "[name].[hash].js"//打包后输出文件的文件名
     },
-    devtool: 'null',
-    devServer: {
-        contentBase: "./public",//本地服务器所加载的页面所在的目录
-        historyApiFallback: true,//不跳转
-        inline: true,//实时刷新
-        hot: true,
-    },
-
     module: {
         rules: [
             {
@@ -36,7 +26,7 @@ module.exports = {
                 test: /\.css|\.less$/,
                 use: [
                     {
-                        loader: MiniCssExtractPlugin.loader,
+                        loader: process.env.NODE_ENV === "production" ? MiniCssExtractPlugin.loader: "style-loader",
                     },
                     {
                         loader: "css-loader",
@@ -58,20 +48,10 @@ module.exports = {
 
     plugins: [
         new HtmlWebpackPlugin({
-            template: __dirname + "/app/index.tmpl.html",
+            template: __dirname + "/src/index.tmpl.html",
             filename: "./index.html",
             title: "Webpack4 Sample"
         }),
-        new webpack.HotModuleReplacementPlugin(),//热加载插件
-        new MiniCssExtractPlugin({
-            filename: "[name].css",
-            chunkFilename: "[id].css"
-        }),
-        new CleanWebpackPlugin('dist/*.*', {
-            root: __dirname,
-            verbose: true,
-            dry: false
-        })
     ]
 
 };

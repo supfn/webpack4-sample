@@ -1,4 +1,4 @@
-/* main.css */
+@import '~antd/dist/antd.css';
 html {
     box-sizing: border-box;
     -ms-text-size-adjust: 100%;
