@@ -23,7 +23,7 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
-                test: /\.css|\.less$/,
+                test: /(\.css|\.less)$/,
                 use: [
                     {
                         loader: process.env.NODE_ENV === "production" ? MiniCssExtractPlugin.loader: "style-loader",
@@ -31,7 +31,7 @@ module.exports = {
                     {
                         loader: "css-loader",
                         options: {
-                            modules: true, // 指定启用css modules
+                            // modules: true, // 指定启用css modules
                             localIdentName: '[name]__[local]--[hash:base64:5]' // 指定css的类名格式
                         }
                     },

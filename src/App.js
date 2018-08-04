@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Layout} from 'antd';
+import { Layout, Menu, Icon } from 'antd';
 import {QSider, QHeader, QContent, QFooter} from './Layout'
-
+const { Header, Content, Footer, Sider } = Layout;
 export default class App extends Component {
     render() {
 

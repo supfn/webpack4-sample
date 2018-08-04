@@ -9,9 +9,12 @@ export default class QSider extends Component {
 
     render() {
         return (
-            <Sider style={{overflow: 'auto', height: '100vh', position: 'fixed', left: 0, background: '#fee7e9'}}>
+            <Sider style={{overflow: 'auto', height: '100vh', position: 'fixed', left: 0}} >
                 <div className="logo"/>
-                <Menu theme="dark" defaultSelectedKeys={['/']} mode="inline">
+                <Menu theme="dark"  mode="inline"
+                      defaultSelectedKeys={[window.location.hash.split('#')[1].split('?')[0]]}
+                      defaultOpenKeys={[`/${window.location.hash.split('#')[1].split('?')[0].split('/')[1]}`]}
+                >
                     <Menu.Item key="/">
                         <Link to="/">
                             <Icon type="pie-chart"/>
@@ -22,9 +25,7 @@ export default class QSider extends Component {
                         key="/user"
                         title={<span><Icon type="user"/><span>User</span></span>}
                     >
-                        <Menu.Item key="/user/tom"><Link to="/user/tom">Tom</Link></Menu.Item>
-                        <Menu.Item key="/user/bill"><Link to="/user/bill">Bill</Link></Menu.Item>
-                        <Menu.Item key="/user/alex"><Link to="/user/alex">Alex</Link></Menu.Item>
+                        <Menu.Item key="/user/list"><Link to="/user/list">user list</Link></Menu.Item>
                     </SubMenu>
                     <SubMenu
                         key="/team"
