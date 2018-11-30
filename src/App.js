@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
 import { Layout, Menu, Icon } from 'antd';
-import {QSider, QHeader, QContent, QFooter} from './Layout'
-const { Header, Content, Footer, Sider } = Layout;
+import {LSider, LHeader, LContent, LFooter} from './layout'
+
 export default class App extends Component {
     render() {
-
         return (
             <Layout style={{ minHeight: '100vh' }}>
                 <Layout>
-                    <QSider />
+                    <LSider />
                     <Layout style={{ marginLeft: 200, minWidth: 1000 }}>
-                        <QHeader />
-                        <QContent />
-                        <QFooter />
+                        <LHeader />
+                        <LContent />
+                        <LFooter />
                     </Layout>
                 </Layout>
             </Layout>

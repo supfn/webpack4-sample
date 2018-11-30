@@ -3,7 +3,7 @@ import {Layout} from 'antd';
 
 const {Footer} = Layout;
 
-export default class QFooter extends Component{
+export default class LFooter extends Component{
     render(){
         return(
             <Footer style={{ textAlign: 'center' }}>
