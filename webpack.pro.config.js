@@ -1,6 +1,6 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
-const baseWebpackConfig = require('./webpack.base.conf');
+const baseWebpackConfig = require('./webpack.base.config');
 const merge = require('webpack-merge');
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin');
 const webpack = require('webpack');

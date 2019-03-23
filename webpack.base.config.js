@@ -1,11 +1,18 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const P = require('path');
 
 module.exports = {
     entry: __dirname + "/src/main.js",//已多次提及的唯一入口文件
     output: {
         path: __dirname + "/dist",//打包后的文件存放的地方
         filename: "[name].[hash].js"//打包后输出文件的文件名
+    },
+    resolve: {
+        extensions: ['.js', '.es6', '.jsx', '.json'],
+        alias: {
+            'src': P.resolve(__dirname, 'src'),
+        }
     },
     module: {
         rules: [
@@ -26,7 +33,7 @@ module.exports = {
                 test: /(\.css|\.less)$/,
                 use: [
                     {
-                        loader: process.env.NODE_ENV === "production" ? MiniCssExtractPlugin.loader: "style-loader",
+                        loader: process.env.NODE_ENV === "production" ? MiniCssExtractPlugin.loader : "style-loader",
                     },
                     {
                         loader: "css-loader",

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Layout, Menu, Icon } from 'antd';
-import {LSider, LHeader, LContent, LFooter} from './layout'
+import {LSider, LHeader, LContent, LFooter} from './layouts'
 
 export default class App extends Component {
     render() {

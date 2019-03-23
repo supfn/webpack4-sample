@@ -9,7 +9,7 @@ export default class LSider extends Component {
 
     render() {
         return (
-            <Sider style={{overflow: 'auto', height: '100vh', position: 'fixed', left: 0}}>
+            <Sider style={{overflow: 'auto', height: '100vh', position: 'fixed', left: 0}} className="__L-sider">
                 <div className="logo"/>
                 <Menu theme="dark"  mode="inline"
                       defaultSelectedKeys={[window.location.hash.split('#')[1].split('?')[0]]}
