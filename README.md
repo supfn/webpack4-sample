@@ -1,6 +1,6 @@
 # webpack4-sample
 
-这是一个最基础的webpack4示例，集合了React,Redux,css模块化，热加载。
+这是一个最基础的webpack4示例，集合了React，Redux，React-Router，css模块化，热加载。
 
 使用前请先yarn 或 npm install安装依赖包
 
