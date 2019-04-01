@@ -1,22 +1,15 @@
-import React, { Component } from 'react';
-import { Layout, Menu, Icon } from 'antd';
-import {LSider, LHeader, LContent, LFooter} from './layouts'
+import React, {Component} from 'react';
+import {Layout} from 'antd';
+import Routers from './layouts/Routers';
 
 export default class App extends Component {
-    render() {
-        return (
-            <Layout style={{ minHeight: '100vh' }}>
-                <Layout>
-                    <LSider />
-                    <Layout style={{ marginLeft: 200, minWidth: 1000 }}>
-                        <LHeader />
-                        <LContent />
-                        <LFooter />
-                    </Layout>
-                </Layout>
-            </Layout>
-        );
-    }
+  render() {
+    return (
+      <Layout style={{ minHeight: '100vh' }}>
+        <Routers/>
+      </Layout>
+    );
+  }
 }
 
 
