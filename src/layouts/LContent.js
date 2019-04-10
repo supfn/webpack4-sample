@@ -19,15 +19,15 @@ export default class LContent extends Component {
       <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
         <main style={{ padding: 24, minHeight: 360, background: '#fff' }}>
           <Switch>
-            <PrivateRoute exact path='/' component={Home}/>
+            <PrivateRoute exact path='/' key='/' component={Home}/>
 
-            <PrivateRoute exact path='/list' component={List}/>
-            <PrivateRoute exact path='/greeter' component={Greeter}/>
-            <PrivateRoute exact path='/team/one' component={One}/>
-            <PrivateRoute exact path='/team/two' component={Two}/>
-            <PrivateRoute exact path='/user/list' component={UserList}/>
-            <PrivateRoute exact path='/todo' component={TodoApp}/>
-            <PrivateRoute path='/user/detail/:id' component={UserDetail}/>
+            <PrivateRoute exact path='/list' key='/list' component={List}/>
+            <PrivateRoute exact path='/greeter' key='/greeter' component={Greeter}/>
+            <PrivateRoute exact path='/team/one' key='/team/one' component={One}/>
+            <PrivateRoute exact path='/team/two' key='/team/two' component={Two}/>
+            <PrivateRoute exact path='/user/list' key='/user/list' component={UserList}/>
+            <PrivateRoute exact path='/todo' key='/todo' component={TodoApp}/>
+            <PrivateRoute path='/user/detail/:id' key='/user/detail/:id' component={UserDetail}/>
 
             <Redirect to='/'/>
           </Switch>
