@@ -2,14 +2,14 @@ import React from 'react';
 import {render} from 'react-dom';
 import {HashRouter} from 'react-router-dom';
 import {Provider} from 'react-redux';
-import {createStore} from 'redux'
-import reducers from './reducers'
+import {createStore} from 'redux';
 import './index.css';
-import App from './App';
+import reducers from './reducers';
+import Routers from './layouts/Routers';
 
 let store = createStore(reducers);
 
-
-render(<HashRouter><Provider store={store}><App/></Provider></HashRouter>, document.getElementById('root'));
+const App = () => <HashRouter><Provider store={store}><Routers/></Provider></HashRouter>;
+render(<App/>, document.getElementById('root'));
 
 

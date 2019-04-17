@@ -38,7 +38,7 @@ class Login extends Component {
     const { loginLoading } = this.state;
     const { getFieldDecorator } = this.props.form;
     return (
-      <div className="login-page">
+      <div className="login-page"  style={{ minHeight: '100vh' }}>
         <Form onSubmit={this.login} className="login-form">
           <FormItem>
             {getFieldDecorator('userName', {

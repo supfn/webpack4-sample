@@ -1,3 +1,4 @@
+import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import {toggleTodo} from '../actions'
 import TodoList from '../components/TodoList'
@@ -14,23 +15,10 @@ const getVisibleTodos = (todos, filter) => {
   }
 };
 
-const mapStateToProps = state => {
-  return {
-    todos: getVisibleTodos(state.todos, state.visibilityFilter)
-  }
-};
+const mapStateToProps = state => ({ todos: getVisibleTodos(state.todos, state.visibilityFilter) });
 
-const mapDispatchToProps = dispatch => {
-  return {
-    onTodoClick: id => {
-      dispatch(toggleTodo(id))
-    }
-  }
-};
+const mapDispatchToProps = dispatch => ({ onTodoClick: bindActionCreators(toggleTodo, dispatch) });
 
-const VisibleTodoList = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(TodoList);
+const VisibleTodoList = connect(mapStateToProps, mapDispatchToProps)(TodoList);
 
 export default VisibleTodoList;
