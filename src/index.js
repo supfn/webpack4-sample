@@ -7,6 +7,9 @@ import './index.css';
 import reducers from './reducers';
 import Routers from './layouts/Routers';
 
+// import {composeWithDevTools} from 'redux-devtools-extension';
+// let store = createStore(reducers, composeWithDevTools());
+
 let store = createStore(reducers);
 
 const App = () => <HashRouter><Provider store={store}><Routers/></Provider></HashRouter>;
