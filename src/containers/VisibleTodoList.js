@@ -1,7 +1,7 @@
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
-import {toggleTodo} from '../actions'
-import TodoList from '../components/TodoList'
+import {toggleTodo} from 'src/redux/modules/todo'
+import TodoList from 'src/components/todo/TodoList'
 
 const getVisibleTodos = (todos, filter) => {
   switch (filter) {
@@ -15,7 +15,7 @@ const getVisibleTodos = (todos, filter) => {
   }
 };
 
-const mapStateToProps = state => ({ todos: getVisibleTodos(state.todos, state.visibilityFilter) });
+const mapStateToProps = state => ({ todos: getVisibleTodos(state.todo.todos, state.todo.visibilityFilter) });
 
 const mapDispatchToProps = dispatch => ({ onTodoClick: bindActionCreators(toggleTodo, dispatch) });
 

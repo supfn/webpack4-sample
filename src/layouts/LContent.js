@@ -1,10 +1,10 @@
 import React, {Component} from "react";
 import {Layout} from 'antd';
 import {Redirect, Switch} from "react-router-dom";
-import {LoadableComponents} from "src/components/LoadableComponent";
+import {LoadablePages} from "src/page/LoadablePages";
 import PrivateRoute from "./PrivateRoute";
 const { Content } = Layout;
-const { Home, List, Greeter, One, Two, TodoApp, UserList, UserDetail } = LoadableComponents;
+const { Home, List, Greeter, One, Two, TodoApp, UserList, UserDetail } = LoadablePages;
 
 export default class LContent extends Component {
   render() {

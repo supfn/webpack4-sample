@@ -22,7 +22,7 @@ export const create = (componentLoader, delay = 300, timeout = 12000) => Loadabl
   timeout
 });
 
-export const LoadableComponents = {
+export const LoadablePages = {
   Login:create(() => import("src/page/login")),
   Home: create(() => import("src/page/home")),
   List: create(() => import("src/page/list")),
