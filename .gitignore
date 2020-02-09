@@ -66,4 +66,6 @@ typings/
 .env
 .DS_Store
 */.DS_Store
+dist
+dest
 
